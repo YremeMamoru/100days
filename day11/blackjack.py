@@ -1,6 +1,5 @@
 import random
 from assets import logo
-import numpy as np
 
  ############### Blackjack Project #####################
 
@@ -26,17 +25,19 @@ import numpy as np
 # Then try out the completed Blackjack project here: 
 # http://blackjack-final.appbrewery.repl.run
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-playercards = np.array([])
-dealercards = np.array([])
+playercards = []
+dealercards = []
 
-play = input("Do you want to play blackjack? [y/n]").lower()
+play = input("Do you want to play blackjack? [y/n]: ").lower()
 
-
-while play == ' y':
+while play == 'y':
     print(logo)
-    for i in range(0,1):
+    for i in range(0,2):
         playercards.append(random.choice(cards))
         dealercards.append(random.choice(cards))
-    currentscore = np.sum(playercards)
+    currentscore = sum(playercards)
     print(f'Your cards: {playercards}, current score: {currentscore}')
-    
+    print(f'Computer first card: {dealercards[1]}')
+
+
+    play = 'n'    
