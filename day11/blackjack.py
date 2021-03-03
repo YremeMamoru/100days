@@ -79,10 +79,7 @@ def game():
     
     if currentscore == 0 or dealerscore == 0 or currentscore > 21:
       gameover = True
-    else:print(f"Your hand: {playercards}. Final score : {currentscore}.")
-  print(f"Dealer hand: {dealercards}. Dealer final score: {dealerscore}.")
-  print(compare(currentscore, dealerscore))
-
+    else:
       choice = input("Want to draw another card? [y/n]: ").lower()
       if choice == 'y':
         playercards.append(dealCard())
